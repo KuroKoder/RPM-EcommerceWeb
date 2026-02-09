@@ -106,3 +106,130 @@ rpm-fe
 └─ tsconfig.json
 
 ```
+```
+rpm-fe
+├─ app
+│  ├─ (marketing)
+│  │  ├─ campaign
+│  │  │  └─ [slug]
+│  │  │     └─ page.tsx
+│  │  ├─ manifesto
+│  │  │  └─ page.tsx
+│  │  └─ page.tsx
+│  ├─ (store)
+│  │  ├─ account
+│  │  │  └─ page.tsx
+│  │  ├─ cart
+│  │  │  └─ page.tsx
+│  │  ├─ checkout
+│  │  │  └─ page.tsx
+│  │  └─ products
+│  │     ├─ loading.tsx
+│  │     ├─ page.tsx
+│  │     └─ [slug]
+│  │        ├─ loading.tsx
+│  │        └─ page.tsx
+│  ├─ api
+│  │  └─ mock
+│  │     ├─ checkout
+│  │     │  └─ route.ts
+│  │     └─ products
+│  │        ├─ best-sellers
+│  │        │  └─ route.ts
+│  │        ├─ featured
+│  │        │  └─ route.ts
+│  │        ├─ route.ts
+│  │        └─ [slug]
+│  │           └─ route.ts
+│  ├─ favicon.ico
+│  ├─ layout.tsx
+│  ├─ not-found.tsx
+│  ├─ page.tsx
+│  ├─ robots.ts
+│  └─ sitemap.ts
+├─ components
+│  ├─ layout
+│  │  ├─ cart-badge.tsx
+│  │  ├─ container.tsx
+│  │  ├─ footer.tsx
+│  │  ├─ header-search.tsx
+│  │  ├─ header.tsx
+│  │  └─ section.tsx
+│  ├─ marketing
+│  │  ├─ best-sellers.tsx
+│  │  ├─ collection-cards.tsx
+│  │  ├─ featured-products.tsx
+│  │  ├─ hero.tsx
+│  │  ├─ lookbook-mini-grid.tsx
+│  │  ├─ manifesto.tsx
+│  │  ├─ newsletter-cta.tsx
+│  │  └─ trust-bar.tsx
+│  ├─ product
+│  │  ├─ image-gallery.tsx
+│  │  ├─ info-block.tsx
+│  │  ├─ pdp-actions.tsx
+│  │  ├─ price.tsx
+│  │  ├─ product-card.tsx
+│  │  ├─ product-client.tsx
+│  │  ├─ product-grid-skeleton.tsx
+│  │  ├─ product-grid.tsx
+│  │  └─ variant-picker.tsx
+│  └─ ui
+│     ├─ badge.tsx
+│     ├─ Button.tsx
+│     ├─ card.tsx
+│     ├─ input.tsx
+│     ├─ pagination.tsx
+│     └─ skeleton.tsx
+├─ eslint.config.mjs
+├─ features
+│  ├─ cart
+│  │  ├─ components
+│  │  │  └─ cart-client.tsx
+│  │  ├─ store.ts
+│  │  └─ types.ts
+│  ├─ catalog
+│  │  ├─ components
+│  │  ├─ hooks
+│  │  └─ types.ts
+│  └─ checkout
+│     ├─ components
+│     │  └─ checkout-client.tsx
+│     └─ validators.ts
+├─ lib
+│  ├─ analytics
+│  │  ├─ events.ts
+│  │  └─ providers.ts
+│  ├─ api
+│  │  ├─ client.ts
+│  │  ├─ dtos
+│  │  │  ├─ cart.ts
+│  │  │  ├─ catalog.ts
+│  │  │  └─ checkout.ts
+│  │  └─ endpoints.ts
+│  ├─ config
+│  │  └─ envConfig.ts
+│  ├─ mock
+│  │  └─ products.ts
+│  ├─ seo
+│  │  ├─ jsonld.ts
+│  │  └─ metadata.ts
+│  └─ utils
+│     └─ cn.ts
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+├─ README.md
+├─ styles
+│  └─ globals.css
+├─ tests
+└─ tsconfig.json
+
+```

@@ -115,14 +115,14 @@ export function CheckoutClient() {
       console.log("checkout_submit_mock", payload);
 
       // REAL API (siap nanti)
-      const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
-      const res = await fetch(`${base}/v1/checkout`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) throw new Error("Checkout failed");
-      const result = await res.json();
+        const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
+        const res = await fetch(`${base}/v1/checkout`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error("Checkout failed");
+        const result = await res.json();
 
       clear();
       setStatus("success");

@@ -6,6 +6,8 @@ import { BestSellers } from "@/components/marketing/best-sellers";
 import { NewsletterCta } from "@/components/marketing/newsletter-cta";
 import { Manifesto } from "@/components/marketing/manifesto";
 import { LookbookMiniGrid } from "@/components/marketing/lookbook-mini-grid";
+import { apiGet, endpoints } from "@/lib/api/client";
+
 
 type ProductItem = {
   id: string;

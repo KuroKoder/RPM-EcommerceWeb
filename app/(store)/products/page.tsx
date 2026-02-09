@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/container";
 import { ProductGrid } from "@/components/product/product-grid";
 import { ProductCard } from "@/components/product/product-card";
 import { Pagination } from "@/components/ui/pagination";
+import { apiGet } from "@/lib/api/client";
 
 // Sesuaikan dengan response API kamu
 type ProductListItem = {
@@ -31,32 +32,19 @@ function formatIdr(n: number) {
   return `Rp${n.toLocaleString("id-ID")}`;
 }
 
-async function getProducts(params: {
-  q?: string;
-  page: number;
-  sort?: string;
-}): Promise<PagedResponse<ProductListItem>> {
-  const sp = new URLSearchParams();
-  if (params.q) sp.set("q", params.q);
-  if (params.sort) sp.set("sort", params.sort);
-  sp.set("page", String(params.page));
-  sp.set("pageSize", "12");
 
-  // PAKAI fetch wrapper kamu kalau sudah ada:
-  // return apiGet(`/v1/products?${sp.toString()}`, { revalidate: 300, tags: ["catalog"] });
-
-  const site = process.env.NEXT_PUBLIC_SITE_URL!;
-  const res = await fetch(`${site}/api/mock/products?${sp.toString()}`, {
-  next: { revalidate: 60 }
-});
-
-  if (!res.ok) {
-    // biar App Router error boundary nangkep
-    throw new Error(`Failed to fetch products: ${res.status}`);
-  }
-
-  return res.json();
+async function getProducts(params: { q?: string; page: number; sort?: string }) {
+  return apiGet<PagedResponse<ProductListItem>>('/api/catalog/list-products', {
+    method: 'GET',
+    body: JSON.stringify({
+      q: params.q,
+      page: params.page,
+      pageSize: 12,
+      sort: params.sort
+    })
+  });
 }
+
 
 export default async function ProductsPage({
   searchParams,
