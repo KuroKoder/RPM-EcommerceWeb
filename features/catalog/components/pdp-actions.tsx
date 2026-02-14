@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils/cn";
-import { Variant } from "@/components/product/variant-picker";
+import { VariantPicker } from "@/features/catalog/components/variant-picker";
 import { useCartStore } from "@/features/cart/store"; // pastikan export ini ada
 
 export function PdpActions({
@@ -18,7 +18,7 @@ export function PdpActions({
   productName: string;
   imageUrl: string;
   price: number;
-  variants: Variant[];
+  variants: VariantPicker[];
   selectedVariantId?: string;
 }) {
   const addItem = useCartStore((s) => s.addItem);

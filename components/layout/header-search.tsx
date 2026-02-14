@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react"; // Ikon Search
 
 export function HeaderSearch() {
   const router = useRouter();
@@ -21,12 +21,13 @@ export function HeaderSearch() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="w-full">
-      <Input
+    <form onSubmit={onSubmit} className="relative w-full group">
+      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400 transition-colors group-focus-within:text-black" />
+      <input
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search products…"
-        aria-label="Search products"
+        placeholder="Search for items, brands..."
+        className="w-full rounded-full border border-neutral-100 bg-neutral-50 py-2 pl-10 pr-4 text-sm outline-none transition-all focus:border-neutral-300 focus:bg-white focus:ring-4 focus:ring-neutral-100"
       />
     </form>
   );

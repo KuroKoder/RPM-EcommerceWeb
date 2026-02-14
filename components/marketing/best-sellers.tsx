@@ -1,20 +1,9 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
-import { ProductGrid } from "@/components/product/product-grid";
-import { ProductCard } from "@/components/product/product-card";
+import { ProductGrid } from "@/features/catalog/components/product-grid";
+import { Product } from "@/features/catalog/types";
 
-type ProductItem = {
-  id: string;
-  slug: string;
-  name: string;
-  brand?: string | null;
-  price: number;
-  compareAtPrice?: number | null;
-  badgeText?: string | null;
-  imageUrl: string;
-};
-
-export function BestSellers({ products }: { products: ProductItem[] }) {
+export function BestSellers({ products }: { products: Product[] }) {
   return (
     <section className="border-t border-[rgb(var(--border))]">
       <Container className="py-12 sm:py-16">
@@ -39,20 +28,7 @@ export function BestSellers({ products }: { products: ProductItem[] }) {
           </Link>
         </div>
 
-        <ProductGrid>
-          {products.map((p) => (
-            <ProductCard
-              key={p.id}
-              slug={p.slug}
-              name={p.name}
-              brand={p.brand ?? undefined}
-              price={p.price}
-              compareAtPrice={p.compareAtPrice ?? undefined}
-              badgeText={p.badgeText ?? undefined}
-              imageUrl={p.imageUrl}
-            />
-          ))}
-        </ProductGrid>
+        <ProductGrid products={products} />
       </Container>
     </section>
   );

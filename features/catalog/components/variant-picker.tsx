@@ -2,14 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils/cn";
-
-export type Variant = {
-  id: string;
-  size: string;
-  color: string;
-  sku: string;
-  stock: number;
-};
+import { Variant } from "@/features/catalog/types";
 
 export function VariantPicker({
   variants,

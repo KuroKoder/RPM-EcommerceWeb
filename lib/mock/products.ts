@@ -1,98 +1,138 @@
-export type MockVariant = {
-  id: string;
-  size: string;
-  color: string;
-  sku: string;
-  stock: number;
-};
+// import { Product } from "@/features/catalog/types";
 
-export type MockProductListItem = {
-  id: string;
-  slug: string;
-  name: string;
-  brand?: string | null;
-  price: number;
-  compareAtPrice?: number | null;
-  badgeText?: string | null;
-  imageUrl: string;
-  images?: string[];
-  variants?: MockVariant[];
-};
-
-export const mockProducts: MockProductListItem[] = [
-  {
-    id: "prd_001",
-    slug: "linen-overshirt-natural",
-    name: "Linen Overshirt",
-    brand: "RPM",
-    price: 649000,
-    compareAtPrice: 799000,
-    badgeText: "New",
-    imageUrl: "https://picsum.photos/seed/linen1/600/800",
-    images: [
-      "https://picsum.photos/seed/linen1/800/1000",
-      "https://picsum.photos/seed/linen2/800/1000",
-      "https://picsum.photos/seed/linen3/800/1000"
-    ],
-    variants: [
-      { id: "var_001_s", size: "S", color: "Natural", sku: "RPM-LN-OS-NAT-S", stock: 12 },
-      { id: "var_001_m", size: "M", color: "Natural", sku: "RPM-LN-OS-NAT-M", stock: 8 },
-      { id: "var_001_l", size: "L", color: "Natural", sku: "RPM-LN-OS-NAT-L", stock: 5 }
-    ]
-  },
-  {
-    id: "prd_002",
-    slug: "cotton-relaxed-shirt-white",
-    name: "Cotton Relaxed Shirt",
-    brand: "RPM",
-    price: 499000,
-    compareAtPrice: null,
-    badgeText: null,
-    imageUrl: "https://picsum.photos/seed/cotton1/600/800",
-    images: [
-      "https://picsum.photos/seed/cotton1/800/1000",
-      "https://picsum.photos/seed/cotton2/800/1000"
-    ],
-    variants: [
-      { id: "var_002_s", size: "S", color: "White", sku: "RPM-CT-RS-WHT-S", stock: 20 },
-      { id: "var_002_m", size: "M", color: "White", sku: "RPM-CT-RS-WHT-M", stock: 14 }
-    ]
-  },
-  {
-    id: "prd_003",
-    slug: "twill-wide-trousers-black",
-    name: "Twill Wide Trousers",
-    brand: "RPM",
-    price: 699000,
-    compareAtPrice: 899000,
-    badgeText: "Sale",
-    imageUrl: "https://picsum.photos/seed/trousers1/600/800",
-    images: [
-      "https://picsum.photos/seed/trousers1/800/1000",
-      "https://picsum.photos/seed/trousers2/800/1000"
-    ],
-    variants: [
-      { id: "var_003_m", size: "M", color: "Black", sku: "RPM-TW-WT-BLK-M", stock: 6 },
-      { id: "var_003_l", size: "L", color: "Black", sku: "RPM-TW-WT-BLK-L", stock: 9 }
-    ]
-  },
-  {
-    id: "prd_004",
-    slug: "heavyweight-tshirt-charcoal",
-    name: "Heavyweight T-Shirt",
-    brand: "RPM",
-    price: 299000,
-    compareAtPrice: null,
-    badgeText: "Best Seller",
-    imageUrl: "https://picsum.photos/seed/tee1/600/800",
-    images: [
-      "https://picsum.photos/seed/tee1/800/1000",
-      "https://picsum.photos/seed/tee2/800/1000"
-    ],
-    variants: [
-      { id: "var_004_s", size: "S", color: "Charcoal", sku: "RPM-HW-TS-CHR-S", stock: 30 },
-      { id: "var_004_m", size: "M", color: "Charcoal", sku: "RPM-HW-TS-CHR-M", stock: 25 },
-      { id: "var_004_l", size: "L", color: "Charcoal", sku: "RPM-HW-TS-CHR-L", stock: 18 }
-    ]
-  }
-];
+// export const mockProducts: Product[] = [
+//   {
+//     id: "p-001",
+//     slug: "essential-oversized-tee-black",
+//     name: "Essential Oversized Tee – Black",
+//     brand: "RPM Studio",
+//     category: "T-Shirts",
+//     price: 199000,
+//     compareAtPrice: 249000,
+//     badgeText: "New",
+//     imageUrl: ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"],
+//     isFeatured: true,
+//     isBestSeller: true,
+//     description: "Oversized t-shirt berbahan cotton combed dengan potongan modern dan nyaman dipakai harian.",
+//     variants: [
+//       { id: "v-001", sku: "RPM-TSH-BLK-S", stock: 15, size: "S", color: "Black" },
+//       { id: "v-002", sku: "RPM-TSH-BLK-M", stock: 20, size: "M", color: "Black" },
+//       { id: "v-003", sku: "RPM-TSH-BLK-L", stock: 0, size: "L", color: "Black" },
+//     ],
+//     details: ["100% Cotton Combed 24s", "Drop shoulder fit", "Breathable material"],
+//     care: ["Machine wash cold", "Iron inside out"],
+//   },
+//   {
+//     id: "p-002",
+//     slug: "essential-oversized-tee-white",
+//     name: "Essential Oversized Tee – White",
+//     brand: "RPM Studio",
+//     category: "T-Shirts",
+//     price: 199000,
+//     imageUrl: ["https://images.unsplash.com/photo-1585386959984-a41552231693?w=800&q=80"],
+//     isFeatured: true,
+//     description: "Essential oversized tee warna putih, breathable dan mudah dipadukan dengan outfit apapun.",
+//     variants: [
+//       { id: "v-004", sku: "RPM-TSH-WHT-M", stock: 10, size: "M", color: "White" },
+//     ],
+//   },
+//   {
+//     id: "p-003",
+//     slug: "boxy-shirt-cream",
+//     name: "Boxy Shirt – Cream",
+//     brand: "RPM Studio",
+//     category: "Shirts",
+//     price: 279000,
+//     imageUrl: ["https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80"],
+//     isBestSeller: true,
+//     description: "Kemeja boxy fit dengan warna cream lembut, cocok untuk smart casual look.",
+//     details: ["Linen Blend", "Boxy Fit", "Hidden Buttons"],
+//   },
+//   {
+//     id: "p-004",
+//     slug: "workwear-pants-khaki",
+//     name: "Workwear Pants – Khaki",
+//     brand: "RPM Studio",
+//     category: "Pants",
+//     price: 399000,
+//     imageUrl: ["https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?w=800&q=80"],
+//     description: "Celana workwear berbahan tebal dengan potongan relaxed, tahan lama dan fungsional.",
+//     variants: [
+//       { id: "v-005", sku: "RPM-PNT-KHK-30", stock: 5, size: "30", color: "Khaki" },
+//       { id: "v-006", sku: "RPM-PNT-KHK-32", stock: 8, size: "32", color: "Khaki" },
+//     ],
+//   },
+//   {
+//     id: "p-005",
+//     slug: "coach-jacket-black",
+//     name: "Coach Jacket – Black",
+//     brand: "RPM Studio",
+//     category: "Outerwear",
+//     price: 499000,
+//     badgeText: "Limited",
+//     imageUrl: ["https://images.unsplash.com/photo-1618354691438-25bc04584c23?w=800&q=80"],
+//     isFeatured: true,
+//     description: "Coach jacket klasik dengan sentuhan modern, ringan namun tetap hangat.",
+//     details: ["Water-resistant polyester", "Snap button closure", "Adjustable hem"],
+//   },
+//   {
+//     id: "p-006",
+//     slug: "canvas-tote-bag",
+//     name: "Canvas Tote Bag",
+//     brand: "RPM Studio",
+//     category: "Accessories",
+//     price: 149000,
+//     imageUrl: ["https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=800&q=80"],
+//     isBestSeller: true,
+//     description: "Tote bag berbahan canvas kuat, cocok untuk aktivitas harian.",
+//     variants: [{ id: "v-007", sku: "RPM-ACC-TOTE", stock: 50 }],
+//   },
+//   {
+//     id: "p-007",
+//     slug: "relaxed-denim-jeans-blue",
+//     name: "Relaxed Denim Jeans – Blue",
+//     brand: "RPM Studio",
+//     category: "Pants",
+//     price: 459000,
+//     imageUrl: ["https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80"],
+//     description: "Denim jeans relaxed fit dengan warna biru klasik, nyaman dan versatile.",
+//     care: ["Wash inside out", "Avoid direct sunlight during drying"],
+//   },
+//   {
+//     id: "p-008",
+//     slug: "hoodie-essential-grey",
+//     name: "Essential Hoodie – Grey",
+//     brand: "RPM Studio",
+//     category: "Hoodies",
+//     price: 389000,
+//     isFeatured: true,
+//     imageUrl: ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80"],
+//     description: "Hoodie essential warna abu-abu, hangat dan cocok untuk layering.",
+//     variants: [
+//       { id: "v-008", sku: "RPM-HD-GRY-L", stock: 12, size: "L", color: "Grey" },
+//     ],
+//   },
+//   {
+//     id: "p-009",
+//     slug: "minimal-cap-black",
+//     name: "Minimal Cap – Black",
+//     brand: "RPM Studio",
+//     category: "Accessories",
+//     price: 129000,
+//     imageUrl: ["https://images.unsplash.com/photo-1520975916090-3105956dac38?w=800&q=80"],
+//     description: "Topi hitam minimalis dengan desain clean dan adjustable strap.",
+//     variants: [{ id: "v-009", sku: "RPM-ACC-CAP", stock: 25, color: "Black" }],
+//   },
+//   {
+//     id: "p-010",
+//     slug: "overshirt-flannel-olive",
+//     name: "Flannel Overshirt – Olive",
+//     brand: "RPM Studio",
+//     category: "Outerwear",
+//     price: 429000,
+//     isBestSeller: true,
+//     imageUrl: ["https://images.unsplash.com/photo-1618453292459-5cde0f6e04e3?w=800&q=80"],
+//     description: "Overshirt flannel warna olive, cocok dipakai sebagai outer atau shirt.",
+//     details: ["Heavyweight flannel", "Dual chest pockets"],
+//   },
+// ];

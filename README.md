@@ -35,201 +35,125 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-```
-rpm-fe
+RPM-ECOMMERCEWEB
+├─ README.md
 ├─ app
-│  ├─ (marketing)
-│  │  ├─ page.tsx
-│  │  └─ [slug]
-│  │     └─ page.tsx
-│  ├─ (store)
-│  │  ├─ account
-│  │  │  └─ page.tsx
-│  │  ├─ cart
-│  │  │  └─ page.tsx
-│  │  ├─ checkout
-│  │  │  └─ page.tsx
-│  │  └─ products
-│  │     ├─ page.tsx
-│  │     └─ [slug]
-│  │        └─ page.tsx
-│  ├─ favicon.ico
-│  ├─ layout.tsx
-│  ├─ page.tsx
-│  ├─ robots.ts
-│  └─ sitemap.ts
+│ ├─ (auth)
+│ │ ├─ login
+│ │ │ └─ page.tsx
+│ │ └─ register
+│ │ └─ page.tsx
+│ ├─ (marketing)
+│ │ ├─ campaign
+│ │ │ └─ [slug]
+│ │ │ └─ page.tsx
+│ │ ├─ manifesto
+│ │ │ └─ page.tsx
+│ │ └─ page.tsx
+│ ├─ (store)
+│ │ ├─ account
+│ │ │ └─ page.tsx
+│ │ ├─ cart
+│ │ │ └─ page.tsx
+│ │ ├─ checkout
+│ │ │ └─ page.tsx
+│ │ └─ products
+│ │ ├─ [slug]
+│ │ │ ├─ loading.tsx
+│ │ │ └─ page.tsx
+│ │ ├─ loading.tsx
+│ │ └─ page.tsx
+│ ├─ favicon.ico
+│ ├─ layout.tsx
+│ ├─ not-found.tsx
+│ ├─ page.tsx
+│ ├─ robots.ts
+│ └─ sitemap.ts
 ├─ components
-│  ├─ layout
-│  ├─ marketing
-│  ├─ product
-│  └─ ui
+│ ├─ layout
+│ │ ├─ cart-badge.tsx
+│ │ ├─ container.tsx
+│ │ ├─ footer.tsx
+│ │ ├─ header-search.tsx
+│ │ ├─ header.tsx
+│ │ └─ section.tsx
+│ ├─ marketing
+│ │ ├─ best-sellers.tsx
+│ │ ├─ collection-cards.tsx
+│ │ ├─ featured-products.tsx
+│ │ ├─ hero.tsx
+│ │ ├─ index.ts
+│ │ ├─ lookbook-mini-grid.tsx
+│ │ ├─ manifesto.tsx
+│ │ ├─ newsletter-cta.tsx
+│ │ └─ trust-bar.tsx
+│ └─ ui
+│ ├─ Button.tsx
+│ ├─ badge.tsx
+│ ├─ card.tsx
+│ ├─ input.tsx
+│ ├─ pagination.tsx
+│ └─ skeleton.tsx
 ├─ eslint.config.mjs
 ├─ features
-│  ├─ cart
-│  │  ├─ components
-│  │  ├─ store.ts
-│  │  └─ types.ts
-│  ├─ catalog
-│  │  ├─ components
-│  │  ├─ hooks
-│  │  └─ types.ts
-│  └─ checkout
-│     ├─ components
-│     └─ validators.ts
+│ ├─ cart
+│ │ ├─ components
+│ │ │ └─ cart-client.tsx
+│ │ ├─ store.ts
+│ │ └─ types.ts
+│ ├─ catalog
+│ │ ├─ components
+│ │ │ ├─ image-gallery.tsx
+│ │ │ ├─ info-block.tsx
+│ │ │ ├─ pdp-actions.tsx
+│ │ │ ├─ price.tsx
+│ │ │ ├─ product-card.tsx
+│ │ │ ├─ product-client.tsx
+│ │ │ ├─ product-grid-skeleton.tsx
+│ │ │ ├─ product-grid.tsx
+│ │ │ ├─ product-info.tsx
+│ │ │ └─ variant-picker.tsx
+│ │ └─ types.ts
+│ └─ checkout
+│ ├─ components
+│ │ └─ checkout-client.tsx
+│ └─ validators.ts
 ├─ lib
-│  ├─ analytics
-│  │  ├─ event.ts
-│  │  └─ providers.ts
-│  ├─ api
-│  │  ├─ client.ts
-│  │  ├─ dto.ts
-│  │  └─ endpoint.ts
-│  ├─ config
-│  │  └─ env.ts
-│  └─ seo
-│     ├─ jsonld.ts
-│     └─ metadata.ts
+│ ├─ analytics
+│ │ ├─ events.ts
+│ │ └─ providers.ts
+│ ├─ api
+│ │ ├─ auth.ts
+│ │ ├─ catalog.ts
+│ │ ├─ client.ts
+│ │ └─ dtos
+│ │ ├─ cart.ts
+│ │ ├─ catalog.ts
+│ │ └─ checkout.ts
+│ ├─ config
+│ │ └─ envConfig.ts
+│ ├─ mock
+│ │ └─ products.ts
+│ ├─ seo
+│ │ ├─ jsonld.ts
+│ │ └─ metadata.ts
+│ ├─ supabase
+│ │ ├─ client.ts
+│ │ └─ server.ts
+│ └─ utils
+│ └─ cn.ts
 ├─ next.config.ts
 ├─ package-lock.json
 ├─ package.json
 ├─ postcss.config.mjs
 ├─ public
-│  ├─ file.svg
-│  ├─ globe.svg
-│  ├─ next.svg
-│  ├─ vercel.svg
-│  └─ window.svg
-├─ README.md
+│ ├─ file.svg
+│ ├─ globe.svg
+│ ├─ images
+│ │ └─ products
+│ ├─ next.svg
+│ ├─ vercel.svg
+│ └─ window.svg
 ├─ styles
-│  └─ globals.css
-├─ tests
+│ └─ globals.css
 └─ tsconfig.json
-
-```
-```
-rpm-fe
-├─ app
-│  ├─ (marketing)
-│  │  ├─ campaign
-│  │  │  └─ [slug]
-│  │  │     └─ page.tsx
-│  │  ├─ manifesto
-│  │  │  └─ page.tsx
-│  │  └─ page.tsx
-│  ├─ (store)
-│  │  ├─ account
-│  │  │  └─ page.tsx
-│  │  ├─ cart
-│  │  │  └─ page.tsx
-│  │  ├─ checkout
-│  │  │  └─ page.tsx
-│  │  └─ products
-│  │     ├─ loading.tsx
-│  │     ├─ page.tsx
-│  │     └─ [slug]
-│  │        ├─ loading.tsx
-│  │        └─ page.tsx
-│  ├─ api
-│  │  └─ mock
-│  │     ├─ checkout
-│  │     │  └─ route.ts
-│  │     └─ products
-│  │        ├─ best-sellers
-│  │        │  └─ route.ts
-│  │        ├─ featured
-│  │        │  └─ route.ts
-│  │        ├─ route.ts
-│  │        └─ [slug]
-│  │           └─ route.ts
-│  ├─ favicon.ico
-│  ├─ layout.tsx
-│  ├─ not-found.tsx
-│  ├─ page.tsx
-│  ├─ robots.ts
-│  └─ sitemap.ts
-├─ components
-│  ├─ layout
-│  │  ├─ cart-badge.tsx
-│  │  ├─ container.tsx
-│  │  ├─ footer.tsx
-│  │  ├─ header-search.tsx
-│  │  ├─ header.tsx
-│  │  └─ section.tsx
-│  ├─ marketing
-│  │  ├─ best-sellers.tsx
-│  │  ├─ collection-cards.tsx
-│  │  ├─ featured-products.tsx
-│  │  ├─ hero.tsx
-│  │  ├─ lookbook-mini-grid.tsx
-│  │  ├─ manifesto.tsx
-│  │  ├─ newsletter-cta.tsx
-│  │  └─ trust-bar.tsx
-│  ├─ product
-│  │  ├─ image-gallery.tsx
-│  │  ├─ info-block.tsx
-│  │  ├─ pdp-actions.tsx
-│  │  ├─ price.tsx
-│  │  ├─ product-card.tsx
-│  │  ├─ product-client.tsx
-│  │  ├─ product-grid-skeleton.tsx
-│  │  ├─ product-grid.tsx
-│  │  └─ variant-picker.tsx
-│  └─ ui
-│     ├─ badge.tsx
-│     ├─ Button.tsx
-│     ├─ card.tsx
-│     ├─ input.tsx
-│     ├─ pagination.tsx
-│     └─ skeleton.tsx
-├─ eslint.config.mjs
-├─ features
-│  ├─ cart
-│  │  ├─ components
-│  │  │  └─ cart-client.tsx
-│  │  ├─ store.ts
-│  │  └─ types.ts
-│  ├─ catalog
-│  │  ├─ components
-│  │  ├─ hooks
-│  │  └─ types.ts
-│  └─ checkout
-│     ├─ components
-│     │  └─ checkout-client.tsx
-│     └─ validators.ts
-├─ lib
-│  ├─ analytics
-│  │  ├─ events.ts
-│  │  └─ providers.ts
-│  ├─ api
-│  │  ├─ client.ts
-│  │  ├─ dtos
-│  │  │  ├─ cart.ts
-│  │  │  ├─ catalog.ts
-│  │  │  └─ checkout.ts
-│  │  └─ endpoints.ts
-│  ├─ config
-│  │  └─ envConfig.ts
-│  ├─ mock
-│  │  └─ products.ts
-│  ├─ seo
-│  │  ├─ jsonld.ts
-│  │  └─ metadata.ts
-│  └─ utils
-│     └─ cn.ts
-├─ next.config.ts
-├─ package-lock.json
-├─ package.json
-├─ postcss.config.mjs
-├─ public
-│  ├─ file.svg
-│  ├─ globe.svg
-│  ├─ next.svg
-│  ├─ vercel.svg
-│  └─ window.svg
-├─ README.md
-├─ styles
-│  └─ globals.css
-├─ tests
-└─ tsconfig.json
-
-```

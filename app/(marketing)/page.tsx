@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function CampaignPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+        <div className="min-h-screen bg-linear-to-b from-blue-50 to-white">
             {/* Header */}
             <header className="bg-white shadow">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

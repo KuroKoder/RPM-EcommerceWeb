@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout/container";
-import { ProductGridSkeleton } from "@/components/product/product-grid-skeleton";
+import { ProductGridSkeleton } from "@/features/catalog/components/product-grid-skeleton";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {

@@ -1,19 +1,21 @@
 "use client";
 
-import Link from "next/link";
 import { useCartStore } from "@/features/cart/store";
+import { useEffect, useState } from "react";
 
 export function CartBadge() {
+  const [mounted, setMounted] = useState(false);
   const count = useCartStore((s) => s.getItemCount());
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || count === 0) return null;
+
   return (
-    <Link href="/cart" className="relative text-sm font-medium">
-      Cart
-      {count > 0 ? (
-        <span className="ml-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-black px-1.5 text-xs text-white">
-          {count}
-        </span>
-      ) : null}
-    </Link>
+    <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-black text-[10px] font-bold text-white">
+      {count}
+    </span>
   );
 }
